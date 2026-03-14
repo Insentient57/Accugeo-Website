@@ -32,7 +32,7 @@ export default function About() {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none"
       >
         <Squares
           speed={0.5}
@@ -42,7 +42,8 @@ export default function About() {
           hoverFillColor="#222"
         />
       </div>
-      <div className="container mx-auto px-6 w-full">
+      <style>{`#about canvas { z-index: 0 !important; pointer-events: none !important; }`}</style>
+      <div className="container mx-auto px-6 w-full relative z-10">
         <h2
           className={`text-5xl md:text-6xl font-bold text-left mb-12 text-white ${isVisible ? "fade-up" : "opacity-0"}`}
           style={{ animationDelay: isVisible ? "0.05s" : undefined }}
